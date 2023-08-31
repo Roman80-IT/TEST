@@ -5400,7 +5400,7 @@ function markupList(books) {
 function markupCategory(data) {
   return data
     .map(({ list_name, books }) => {
-      return `<h2 class="js-list">${list_name}</h2>
+      return `<h2 class="js-category-name">${list_name}</h2>
       <ul class="js-list-bestBooks">${markupList(books)}</ul>
       <btn class="js-btn-bestBooks" data-js="${list_name}">See more</btn>`;
     })
