@@ -1,4 +1,4 @@
-// import { getBooksAPI } from './js/getBookAPI'; - ПРИКЛАД
+// import { getBooksAPI } from './js/api'; - ПРИКЛАД
 
 const $Books = {
   bestBooks: document.querySelector('.title-book'),
@@ -12,7 +12,7 @@ homeStart();
 
 // Початковий список книг
 function homeStart() {
-  return getBooksAPI('top-books').then(({ data }) => {
+  return getAPI('top-books').then(({ data }) => {
     $Books.container.insertAdjacentHTML(
       `<h1 class="title-book">Best Sellers <span>Books</span></h1>` // заголовок "Best Sellers Books"
     );
@@ -63,7 +63,7 @@ function onLoadSeeMore(e) {
     // Обробка вибору категорії "See more"
     let seeMoreCategory = e.target.dataset.js;
     $Books.container.innerHTML = '';
-    getBooksAPI(`category?category=${seeMoreCategory}`)
+    getAPI(`category?category=${seeMoreCategory}`)
       .then(({ data }) => {
         currentCategory(seeMoreCategory); // Позначаємо активну категорію
         $Books.chooseCat.classList.remove('categories__item--active');

@@ -5385,6 +5385,28 @@
   },
 ];
 
+function markupList(books) {
+  return books
+    .map(({ book_image, title, author, _id }) => {
+      return `<li class="js-list-bestBooks" id="${_id}">
+      <img src="${book_image}" alt="${title}" data-id="${_id}" class="img-bestBooks"/>
+      <h3 class="js-named-bestBooks">${title}</h3>
+      <p class="js-author-bestBooks">${author}</p>
+    </li>`;
+    })
+    .join('');
+}
+
+function markupCategory(data) {
+  return data
+    .map(({ list_name, books }) => {
+      return `<h2 class="js-list">${list_name}</h2>
+      <ul class="js-list-bestBooks">${markupList(books)}</ul>
+      <btn class="js-btn-bestBooks" data-js="${list_name}">See more</btn>`;
+    })
+    .join('');
+}
+
 const myData = [
   {
     _id: '643282b1e85766588626a080',
