@@ -1,5 +1,5 @@
-import { getAPI } from './api'; // ПРИКЛАД
-import { $Books, currentCategory } from '../markup.js';
+import { getAPI } from '..js/api/api'; // ПРИКЛАД
+import { $Books, currentCategory } from './markup.js';
 
 const containerAll = document.querySelector('.all-categories');
 const bookCategory = document.querySelector('.categories__list');

@@ -1,4 +1,4 @@
-// import { getBooksAPI } from './js/api'; - ПРИКЛАД
+// import { getAPI } from './js/api/api'; - ПРИКЛАД
 
 const $Books = {
   bestBooks: document.querySelector('.title-book'),
