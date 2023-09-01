@@ -18,6 +18,13 @@
   margin-bottom: 40px;
 }
 
+.js-list-books {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .title-book {
   width: 335px;
   font-size: 32px;
@@ -37,7 +44,7 @@
   border-radius: 8px;
 }
 
-.js-btn-bestBooks {
+.js-btn-books {
   display: flex;
   border-radius: 40px;
   border: 2px solid var(--color-violet);
@@ -58,24 +65,24 @@
   overflow: hidden;
 }
 
-.js-btn-bestBooks:hover,
-.js-btn-bestBooks:focus {
+.js-btn-books:hover,
+.js-btn-books:focus {
   cursor: pointer;
   background-color: var(--color-violet);
   color: var(--color-white);
 }
 
-.js-list-bestBooks,
-.js-list-allBooks {
+.js-list-books,
+.js-item-book {
   width: 335px;
   list-style: none;
   position: relative;
 }
 
-.js-list-allBooks {
+.js-item-book {
   margin-bottom: 40px;
 }
 
-.js-list-allBooks:last-child {
+.js-item-book:last-child {
   margin-bottom: 0px;
 }

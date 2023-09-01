@@ -28,10 +28,10 @@ function homeStart() {
 function markupList(books) {
   return books
     .map(({ book_image, title, author, _id }) => {
-      return `<li class="js-list-bestBooks" id="${_id}">
+      return `<li class="js-list-books" id="${_id}">
       <img src="${book_image}" alt="${title}" data-id="${_id}" class="img-bestBooks"/>
-      <h3 class="js-named-bestBooks">${title}</h3>
-      <p class="js-author-bestBooks">${author}</p>
+      <h3 class="js-named-book">${title}</h3>
+      <p class="js-author-book">${author}</p>
     </li>`;
     })
     .join('');
@@ -42,8 +42,8 @@ function markupCategory(data) {
   return data
     .map(({ list_name, books }) => {
       return `<h2 class="js-category-name">${list_name}</h2>
-      <ul class="js-list-bestBooks">${markupList(books)}</ul>
-      <btn class="js-btn-bestBooks" data-js="${list_name}">See more</btn>`;
+      <ul class="js-list-books">${markupList(books)}</ul>
+      <btn class="js-btn-books" data-js="${list_name}">See more</btn>`;
     })
     .join('');
 }
@@ -59,7 +59,7 @@ function onLoadSeeMore(e) {
     e.target.addEventListener('click', openModal(id)); // Відкриття модального вікна
   }
 
-  if (e.target.classList.contains('js-btn-bestBooks')) {
+  if (e.target.classList.contains('js-btn-books')) {
     // Обробка вибору категорії "See more"
     let seeMoreCategory = e.target.dataset.js;
     $Books.container.innerHTML = '';
@@ -72,11 +72,11 @@ function onLoadSeeMore(e) {
           .map(({ book_image, title, author, _id }) => {
             // Розмітка для всіх книг в обраній категорії
             return `
-            <li class="js-list-allBooks" id="${_id}">
+            <li class="js-item-book" id="${_id}">
               <img src="${book_image}" alt="${title}" data-id="${_id}" class="img-bestBooks"/>
               <div class="card-hover-categories" data-id="${_id}"><p class="card-text-hover" data-id="${_id}">quick view</p></div>
-              <h3 class="js-named-bestBooks">${title}</h3>
-              <p class="js-author-bestBooks">${author}</p>
+              <h3 class="js-named-book">${title}</h3>
+              <p class="js-author-book">${author}</p>
             </li>`;
           })
           .join('');

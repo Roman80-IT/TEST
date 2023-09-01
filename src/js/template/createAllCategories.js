@@ -42,10 +42,10 @@ function onOpenCategory(e) {
           .map(({ book_image, title, author, _id }) => {
             // Розмітка для всіх книг обраної категорії
             return `
-            <li class="js-list-allBooks id=${_id}">
+            <li class="js-item-book id=${_id}">
               <img src="${book_image}" alt="${title}" data-id="${_id}" class="img-bestBooks"/>
-              <h3 class="js-named-bestBooks">${title}</h3>
-              <p class="js-author-bestBooks">${author}</p>
+              <h3 class="js-named-book">${title}</h3>
+              <p class="js-author-book">${author}</p>
             </li>`;
           })
           .join('');
