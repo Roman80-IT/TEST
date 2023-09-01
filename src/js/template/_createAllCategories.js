@@ -1,5 +1,5 @@
 import { getAPI } from '..js/api/api'; // ПРИКЛАД
-import { $Books, currentCategory } from './markup.js';
+import { $Books, currentCategory } from './_markup.js';
 
 const containerAll = document.querySelector('.all-categories');
 const bookCategory = document.querySelector('.categories__list');
@@ -43,9 +43,9 @@ function onOpenCategory(e) {
             // Розмітка для всіх книг обраної категорії
             return `
             <li class="js-item-book id=${_id}">
-              <img src="${book_image}" alt="${title}" data-id="${_id}" class="img-books"/>
+              <img src="${book_image}" alt="${title}" data-id="${_id}" class="book-img"/>
               <h3 class="js-named-book">${title}</h3>
-              <p class="js-author-book">${author}</p>
+              <p class="book-author">${author}</p>
             </li>`;
           })
           .join('');

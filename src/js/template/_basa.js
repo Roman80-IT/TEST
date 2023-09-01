@@ -5389,9 +5389,9 @@ function markupList(books) {
   return books
     .map(({ book_image, title, author, _id }) => {
       return `<li class="js-item-book" id="${_id}">
-      <img src="${book_image}" alt="${title}" data-id="${_id}" class="img-books"/>
+      <img src="${book_image}" alt="${title}" data-id="${_id}" class="book-img"/>
       <h3 class="js-named-book">${title}</h3>
-      <p class="js-author-book">${author}</p>
+      <p class="book-author">${author}</p>
     </li>`;
     })
     .join('');
