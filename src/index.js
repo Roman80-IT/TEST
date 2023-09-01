@@ -1,6 +1,6 @@
 import * as fonds from './js/fonds/fonds';
 import * as modals from './js/modals/modals';
-import axios from 'axios'; // axios
+// import axios from 'axios'; // axios
 import { fetchCategoryList, fetchAllBooks } from './js/api/api-categories';
 import { fetchCategoryTop } from './js/api/api';
 import { addMarkupCategoryList } from './js/helpers/helpers';
@@ -35,14 +35,17 @@ async function onShowAllBooks(event) {
 
   try {
     const resp = await fetchAllBooks(nameOfCategory);
-
-    console.log(resp.data);
+    addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));
+    // console.log(resp.data);
   } catch (error) {
     console.log(error.message);
   }
 }
 
-//-------------------All Top Of Books ---------------------------------------
+//------------------- Top Of Books ---------------------------------------
+
+// refs.listCategoryEl.addEventListener('click', getTopOfBooks);
+// let selectedCategory = 0;
 
 function addMarkup(element, markup) {
   element.insertAdjacentHTML('beforeend', markup);
