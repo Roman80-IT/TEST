@@ -43,7 +43,7 @@ function onOpenCategory(e) {
             // Розмітка для всіх книг обраної категорії
             return `
             <li class="js-item-book id=${_id}">
-              <img src="${book_image}" alt="${title}" data-id="${_id}" class="img-bestBooks"/>
+              <img src="${book_image}" alt="${title}" data-id="${_id}" class="img-books"/>
               <h3 class="js-named-book">${title}</h3>
               <p class="js-author-book">${author}</p>
             </li>`;

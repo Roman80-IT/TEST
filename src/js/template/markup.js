@@ -28,8 +28,8 @@ function homeStart() {
 function markupList(books) {
   return books
     .map(({ book_image, title, author, _id }) => {
-      return `<li class="js-list-books" id="${_id}">
-      <img src="${book_image}" alt="${title}" data-id="${_id}" class="img-bestBooks"/>
+      return `<li class="js-item-book" id="${_id}">
+      <img src="${book_image}" alt="${title}" data-id="${_id}" class="img-books"/>
       <h3 class="js-named-book">${title}</h3>
       <p class="js-author-book">${author}</p>
     </li>`;
@@ -73,7 +73,7 @@ function onLoadSeeMore(e) {
             // Розмітка для всіх книг в обраній категорії
             return `
             <li class="js-item-book" id="${_id}">
-              <img src="${book_image}" alt="${title}" data-id="${_id}" class="img-bestBooks"/>
+              <img src="${book_image}" alt="${title}" data-id="${_id}" class="img-books"/>
               <div class="card-hover-categories" data-id="${_id}"><p class="card-text-hover" data-id="${_id}">quick view</p></div>
               <h3 class="js-named-book">${title}</h3>
               <p class="js-author-book">${author}</p>
