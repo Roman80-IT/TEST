@@ -5,6 +5,7 @@ import { fetchCategoryList, fetchAllBooks } from './js/api/api-categories';
 import { fetchCategoryTop } from './js/api/api';
 import { addMarkupCategoryList } from './js/helpers/helpers';
 import { markupCategoryList } from './js/template/markup';
+import { createMarkupTopBooks } from './js/template/markup';
 import refs from './js/refs/refs';
 
 //----------------------Category List-----------------------------------------
@@ -47,20 +48,54 @@ async function onShowAllBooks(event) {
 // refs.listCategoryEl.addEventListener('click', getTopOfBooks);
 // let selectedCategory = 0;
 
-function addMarkup(element, markup) {
-  element.insertAdjacentHTML('beforeend', markup);
-}
+// function addMarkup(element, markup) {
+//   element.insertAdjacentHTML('beforeend', markup);
+// }
 
-async function getTopOfBooks() {
+// async function getTopOfBooks() {
+//   try {
+//     const data = await fetchCategoryTop();
+
+//     console.log(data.data);
+
+//     for (const item of data.data) {
+//       addMarkup(containerEl, createMarkupTopBooks(item.books));
+//     }
+//   } catch (err) {
+//     console.log(err.message);
+//   }
+// }
+
+//-------------------All Top Of Books ---------------------------------------
+
+// refs.listCategoryEl.addEventListener('click', getTopOfBooks);
+
+// async function getTopOfBooks() {
+//   try {
+//     const data = await fetchCategoryTop();
+//     addMarkup(refs.listAllBooksEl, markupTopBooks(data.data));
+//   } catch (err) {
+//     console.log(err.message);
+//   }
+// }
+
+const topBooks = async () => {
   try {
-    const data = await fetchCategoryList();
+    const resp = await fetchTopBooks();
+    for (const item of resp.data) {
+      refs.listAllBooksEl.insertAdjacentHTML(
+        'beforeend',
+        <h2>${item.list_name}</h2>
+      );
 
-    console.log(data.data);
-
-    for (const item of data.data) {
-      addMarkup(containerEl, createMarkupTopBooks(item.books));
+      for (const book of item.books) {
+        console.log(item.books);
+        addMarkupTopBooks(refs.listAllBooksEl, markupAllBooks(item.books));
+      }
     }
-  } catch (err) {
-    console.log(err.message);
+  } catch (error) {
+    console.log(error.message);
   }
-}
+};
+
+topBooks();
