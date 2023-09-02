@@ -29,7 +29,7 @@ function markupAllBooks(arr) {
     .join('');
 }
 
-export { markupCategoryList, markupAllBooks };
+// export { markupCategoryList, markupAllBooks };
 
 //----------------------Create markup Top Books -----------------------------------
 
@@ -48,4 +48,4 @@ function markupTopBooks(arr) {
     )
     .join('');
 }
-export { markupCategoryList, markupTopBooks };
+export { markupCategoryList, markupAllBooks, markupTopBooks };
